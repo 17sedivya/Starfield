@@ -12,7 +12,8 @@ void setup()
 }
 void draw()
 {
-  background(0);
+  fill(0, 0, 0, 33);
+  rect(0, 0, 500, 500);
    for(int i = 0; i < norm.length; i++){
      norm[i].move();
      norm[i].show();
@@ -20,7 +21,7 @@ void draw()
 }
 class NormalParticle implements Particle
 {
-  double myX, myY, theta, speed, cos, sin;
+  double myX, myY, theta, speed;
   NormalParticle(){
   myX = 250;
   myY = 250;
@@ -46,7 +47,7 @@ if(myX > 501 || myY > 501){
 }
 public void show()
 {
-  
+  noStroke();
   fill((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
   ellipse((int)myX, (int)myY, 15, 15);
 }
@@ -60,10 +61,10 @@ class OddballParticle implements Particle
 {
   double myX, myY, theta, speed, cos, sin;
   OddballParticle(){
-  myX = 250;
+  myX = 150;
   myY = 250;
-  theta = (Math.random()*2*Math.PI);
-  speed = (Math.random() * 1);
+  theta = (Math.random()*5*Math.PI);
+  speed = (Math.random() * 5);
   
 }
 public void move()
@@ -71,13 +72,13 @@ public void move()
 myX += Math.cos(theta)*speed;
 myY += Math.sin(theta)*speed;
 if(myX > 501 || myY > 501){
-    myX = 250;
-    myY = 250;
+    myX = (int)(Math.random() * 499);
+    myY = (int)(Math.random() * 499);
     }
     else
     if(myX < 0 || myY < 0){
-    myX = 250;
-    myY = 250;
+    myX = (int)(Math.random() * 499);
+    myY = (int)(Math.random() * 499);
     } 
 }
 public void show()
