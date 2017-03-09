@@ -40,8 +40,8 @@ if(myX > 501 || myY > 501){
     }
     else
     if(myX < 0 || myY < 0){
-    myX = 250;
-    myY = 250;
+    myX = mouseX;
+    myY = mouseY;
     } 
 
 }
